@@ -18,15 +18,11 @@ class _DragablePlaneState extends State<DragablePlane> {
   double prevScale = 1;
   double scale = 1;
 
-  void updateScale(double zoom) => setState(() => scale = prevScale * zoom);
-  void commitScale() => setState(() => prevScale = scale);
   void updatePosition(Offset newPosition) =>
       setState(() => position = newPosition);
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onScaleUpdate: (details) => updateScale(details.scale),
-      onScaleEnd: (_) => commitScale(),
       child: Stack(
         children: [
           Positioned(
