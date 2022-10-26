@@ -26,6 +26,9 @@ flutter:
     - assets/images/inimigo_1.png
     - assets/images/shotSheet.png
     - assets/images/player.png
+    - assets/images/enemySheet.png
+    - assets/images/stars1.png
+    - assets/images/stars2.png
   fonts:
   - family: BungeeInline
     fonts:

@@ -1,24 +1,27 @@
-import 'dart:ui';
-import 'package:flame/game.dart';
-import 'package:flutter/material.dart' hide Image;
-
 import 'package:flame/components.dart';
 
-class Player extends FlameGame {
-  late SpriteAnimationComponent plane;
-
-  showPlane() {
-    Image planeImage = images.load('Ship6.png') as Image;
-    var planeAnimation = SpriteAnimation.fromFrameData(
-        planeImage,
-        SpriteAnimationData.sequenced(
-            amount: 1, stepTime: 0.1, textureSize: Vector2(120, 120)));
-    return plane = SpriteAnimationComponent()
-      ..anchor = Anchor.center
-      ..animation = planeAnimation
-      ..size = Vector2(80, 80) * 1.0
-      ..position = Vector2(150, 300);
-  }
+class Player extends SpriteComponent {
+  Player({
+    Sprite? sprite,
+    Vector2? position,
+    Vector2? size,
+  }) : super(
+          sprite: sprite,
+          position: position,
+          size: size,
+        );
 
   void addToScore(int killPoint) {}
 }
+// Image planeImage = await images.load('player.png');
+    // var planeAnimation = SpriteAnimation.fromFrameData(
+    //     planeImage,
+    //     SpriteAnimationData.sequenced(
+    //         amount: 1, stepTime: 0.1, textureSize: Vector2(250, 250)));
+    // player = SpriteAnimationComponent()
+    //   ..anchor = Anchor.center
+    //   ..animation = planeAnimation
+    //   ..size = Vector2(80, 80) * 1.0
+    //   ..position = Vector2(150, 300);
+    // player.anchor = Anchor.center;
+    // add(player);
