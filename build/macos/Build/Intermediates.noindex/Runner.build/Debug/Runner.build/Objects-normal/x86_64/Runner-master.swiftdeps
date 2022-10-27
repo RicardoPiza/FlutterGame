@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)"
+options: "586cb7a204daeaaa6e81837691523ce877368d899187b43e396b7ac74d6eae07"
+build_start_time: [1666833964, 881516933]
+build_end_time: [1666833972, 37857055]
+inputs:
+  "/Users/ricksonfigueira/Documents/coding/usf/FlutterGame/flutter_game/macos/Flutter/GeneratedPluginRegistrant.swift": [1666833936, 178412914]
+  "/Users/ricksonfigueira/Documents/coding/usf/FlutterGame/flutter_game/macos/Runner/AppDelegate.swift": [1666828681, 916264295]
+  "/Users/ricksonfigueira/Documents/coding/usf/FlutterGame/flutter_game/macos/Runner/MainFlutterWindow.swift": [1666828681, 919429779]
