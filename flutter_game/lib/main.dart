@@ -1,16 +1,26 @@
 import 'package:flame/flame.dart';
 import 'package:flame/game.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import 'game/game.dart';
+import 'game_manager.dart';
 
-void main(List<String> args) {
+void main() {
   WidgetsFlutterBinding.ensureInitialized();
   Flame.device.fullScreen();
-  final game = Raptor();
-  runApp(
-    GameWidget(
-      game: game,
-    ),
-  );
+  Flame.device.setPortrait();
+
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: "Raptor: Call of the USF",
+      debugShowCheckedModeBanner: false,
+      home: GameWidget(game: GameManager()),
+    );
+  }
 }

@@ -1,129 +1,63 @@
 import 'dart:math';
-
+import 'package:flame/cache.dart';
 import 'package:flame/collisions.dart';
-import 'package:flame/particles.dart';
 import 'package:flame/components.dart';
-import 'package:flutter/material.dart';
+import 'package:flame/geometry.dart';
+import 'package:flame/sprite.dart';
 import 'package:flutter_game/game/player.dart';
-import '../models/command.dart';
-import '../models/enemy_data.dart';
 import 'bullet.dart';
-import '../knows_game_size.dart';
+import 'game.dart';
+import '../game_manager.dart';
 
-class Enemy extends SpriteComponent
-    with KnowsGameSize, CollisionCallbacks, HasGameRef {
-  double _speed = 250;
-  Vector2 moveDirection = Vector2(0, 1);
-  late Timer _freezeTimer;
-  final _random = Random();
-  final EnemyData enemyData;
-  int _hitPoints = 10;
-  final _hpText = TextComponent(
-    text: '10 HP',
-    textRenderer: TextPaint(
-      style: const TextStyle(
-        color: Colors.white,
-        fontSize: 12,
-        fontFamily: 'BungeeInline',
-      ),
-    ),
-  );
-  Vector2 getRandomVector() {
-    return (Vector2.random(_random) - Vector2.random(_random)) * 500;
-  }
+class Enemy extends SpriteAnimationComponent
+    with HasGameRef<GameManager>, GestureHitboxes, CollisionCallbacks {
+  final double _speed = 250;
 
-  Vector2 getRandomDirection() {
-    return (Vector2.random(_random) - Vector2(0.5, -1)).normalized();
-  }
+  final Function(Vector2) onTouch;
+  var rectanglehitbox = RectangleHitbox();
 
-  Enemy({
-    required Sprite? sprite,
-    required this.enemyData,
-    required Vector2? position,
-    required Vector2? size,
-  }) : super(sprite: sprite, position: position, size: size) {
-    angle = pi;
-    _speed = enemyData.speed;
-    _hitPoints = enemyData.level * 10;
-    _hpText.text = '$_hitPoints HP';
-    _freezeTimer = Timer(2, onTick: () {
-      _speed = enemyData.speed;
-    });
-    if (enemyData.hMove) {
-      moveDirection = getRandomDirection();
-    }
-  }
+  Enemy(this.onTouch);
 
   @override
-  void onMount() {
-    super.onMount();
-    final shape = CircleHitbox.relative(
-      0.8,
-      parentSize: size,
-      position: size / 2,
-      anchor: Anchor.center,
-    );
-    add(shape);
-    _hpText.angle = pi;
-    _hpText.position = Vector2(50, 80);
-    add(_hpText);
+  Future<void> onLoad() async {
+    super.onLoad();
+    var spriteSheet = SpriteSheet(
+        image: await Images().load('enemy.png'), srcSize: Vector2(16.0, 16));
+    animation = spriteSheet.createAnimation(row: 0, stepTime: 0.2);
+    var size = 35.0;
+    position = Vector2(
+        Random()
+            .nextInt((gameRef.size.toRect().width - size).toInt())
+            .toDouble(),
+        size);
+    width = size;
+    height = size;
+    anchor = Anchor.center;
+
+    add(rectanglehitbox);
   }
 
   @override
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
-
     if (other is Bullet) {
-      _hitPoints -= 10;
-    } else if (other is Player) {
-      destroy();
+      removeFromParent();
+      remove(rectanglehitbox);
+      onTouch.call(other.position);
     }
   }
 
-  void destroy() {
-    removeFromParent();
-    final command = Command<Player>(action: (player) {
-      player.addToScore(enemyData.killPoint);
-    });
-    final particleComponent = ParticleSystemComponent(
-      particle: Particle.generate(
-        count: 20,
-        lifespan: 0.1,
-        generator: (i) => AcceleratedParticle(
-          acceleration: getRandomVector(),
-          speed: getRandomVector(),
-          position: position.clone(),
-          child: CircleParticle(
-            radius: 2,
-            paint: Paint()..color = Colors.white,
-          ),
-        ),
-      ),
-    );
-
-    gameRef.add(particleComponent);
+  void move(Vector2 delta) {
+    position.add(delta);
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-    _hpText.text = '$_hitPoints HP';
-    if (_hitPoints <= 0) {
-      destroy();
-    }
-    _freezeTimer.update(dt);
-    position += moveDirection * _speed * dt;
+    position += Vector2(0, 1) * _speed * dt;
     if (position.y > gameRef.size.y) {
       removeFromParent();
-    } else if ((position.x < size.x / 2) ||
-        (position.x > (gameRef.size.x - size.x / 2))) {
-      moveDirection.x *= -1;
+      remove(rectanglehitbox);
     }
-  }
-
-  void freeze() {
-    _speed = 0;
-    _freezeTimer.stop();
-    _freezeTimer.start();
   }
 }
