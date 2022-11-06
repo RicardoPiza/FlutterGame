@@ -1,0 +1,14 @@
+
+flutter_game/macos/Runner.xcodeproj/project.pbxproj
+flutter_game/macos/Podfile
+flutter_game/macos/Flutter/GeneratedPluginRegistrant.swift
+flutter_game/macos/Podfile.lock
+flutter_game/ios/Podfile
+flutter_game/ios/Flutter/Release.xcconfig
+flutter_game/ios/Flutter/Debug.xcconfig
+flutter_game/assets/audio/shot.mp3
+flutter_game/ios/Flutter/Debug.xcconfig
+flutter_game/ios/Flutter/Release.xcconfig
+android/local.properties
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+flutter_game/linux/flutter/generated_plugin_registrant.cc

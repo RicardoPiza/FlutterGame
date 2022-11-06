@@ -23,7 +23,6 @@ class Raptor extends Component with HasGameRef<GameManager> {
     super.onLoad();
     enemySpawner = Timer(.5, onTick: _spawnEnemy, repeat: true);
     bulletSpawner = Timer(.3, onTick: _spawnBullet, repeat: true);
-
     add(Background());
 
     _playerScore = TextComponent(

@@ -1,6 +1,7 @@
 import 'package:flame/collisions.dart';
 import 'package:flame/components.dart';
 import 'package:flutter_game/game_manager.dart';
+import 'package:flame_audio/flame_audio.dart';
 
 import 'enemy.dart';
 
@@ -17,6 +18,7 @@ class Bullet extends SpriteComponent
     sprite = await gameRef.loadSprite('shot4_5.png');
     width = 80;
     height = 120;
+    FlameAudio.play('shot.mp3');
 
     anchor = Anchor.center;
     add(shape);
