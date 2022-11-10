@@ -35,7 +35,7 @@ class Player extends SpriteAnimationComponent
   void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
     super.onCollision(intersectionPoints, other);
     if (other is Enemy) {
-      gameRef.camera.shake(duration: 1);
+      gameRef.camera.shake(duration: .05, intensity: 10);
       // onTouch.call();
     }
   }
