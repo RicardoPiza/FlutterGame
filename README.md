@@ -12,6 +12,7 @@ Utilizado flame framework do flutter.
 Utilizado flame audio.
 As imagens foram trabalhadas no Figma.
 Bibliotecas do flame
+
 Classes
 Para cada objeto é uma classe separada.
 
