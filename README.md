@@ -17,6 +17,7 @@ Classes
 Para cada objeto é uma classe separada.
 
 Classe Bala
+
 ![image](https://user-images.githubusercontent.com/61169043/202529161-ca9b5d35-29f8-4ffc-b5c5-0da5baa504a6.png)
 
 Classe Inimigo Administrador
