@@ -42,3 +42,7 @@ Acesso e execução do código
 O código do projeto encontra-se no github.
 
 Objetivo do Projeto
+
+Publico Alvo
+
+O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
