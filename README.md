@@ -16,35 +16,39 @@ Utilizado flame audio.
 As imagens foram trabalhadas no Figma.
 Bibliotecas do flame
 
-Classes
+
+##Classes
 Para cada objeto é uma classe separada.
 
-Classe Bala
+###Classe Bala
 
 ![image](https://user-images.githubusercontent.com/61169043/202529161-ca9b5d35-29f8-4ffc-b5c5-0da5baa504a6.png)
 
-Classe Inimigo Administrador
+###Classe Inimigo Administrador
 
 ![image](https://user-images.githubusercontent.com/61169043/202529646-dbe168f7-9362-4f5f-9b1e-37e8f63d613e.png)
 
-Classe Inimigo
+###Classe Inimigo
 
 ![image](https://user-images.githubusercontent.com/61169043/202529851-a5be1ad0-4f89-4a10-81b3-b23d551944d5.png)
 
-Classe Jogo
+###Classe Jogo
 
 ![image](https://user-images.githubusercontent.com/61169043/202530005-e29feb60-43f7-42a0-9d3e-5a1b72b01cac.png)
 
 
-Classe Jogador
+###Classe Jogador
 
 ![image](https://user-images.githubusercontent.com/61169043/202530123-b3e996f8-059b-4a94-8b65-c51207872ef0.png)
 
 
-Acesso e execução do código
+##Acesso e execução do código
+
 O código do projeto encontra-se no github.
 
-Objetivo do Projeto
+https://github.com/RicardoPiza/FlutterGame
+
+##Objetivo do Projeto
 
 Publico Alvo
 
