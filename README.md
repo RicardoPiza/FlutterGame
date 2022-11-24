@@ -36,27 +36,22 @@ Para cada objeto é uma classe separada.
 ### Classe Bala
 
 ```
-class Bullet extends SpriteComponent with CollisionCallbacks {
-  final double _speed = 650;
+class Bullet extends SpriteComponent
+    with CollisionCallbacks, GestureHitboxes, HasGameRef<GameManager> {
+  final double _speed = 400;
+  var shape = RectangleHitbox();
 
   Vector2 direction = Vector2(0, -1);
 
-  Bullet({
-    required Sprite? sprite,
-    required Vector2? position,
-    required Vector2? size,
-  }) : super(sprite: sprite, position: position, size: size);
-
   @override
-  void onMount() {
-    super.onMount();
+  Future<void> onLoad() async {
+    super.onLoad();
+    sprite = await gameRef.loadSprite('shot4_5.png');
+    width = 80;
+    height = 120;
+    FlameAudio.play('shot.mp3');
 
-    final shape = CircleHitbox.relative(
-      0.4,
-      parentSize: size,
-      position: size / 2,
-      anchor: Anchor.center,
-    );
+    anchor = Anchor.center;
     add(shape);
   }
 
@@ -66,39 +61,218 @@ class Bullet extends SpriteComponent with CollisionCallbacks {
 
     if (other is Enemy) {
       removeFromParent();
+      remove(shape);
     }
   }
 
   @override
   void update(double dt) {
     super.update(dt);
-
     position += direction * _speed * dt;
 
     if (position.y < 0) {
       removeFromParent();
+      remove(shape);
+    }
+  }
+}
+```
+### Classe Jogador
+```
+class Player extends SpriteAnimationComponent
+    with HasGameRef<GameManager>, GestureHitboxes, CollisionCallbacks {
+  final VoidCallback onTouch;
+
+  Player(this.onTouch);
+
+  @override
+  Future<void> onLoad() async {
+    super.onLoad();
+    var spriteSheet = SpriteSheet(
+      image: await Images().load('player_original.png'),
+      srcSize: Vector2(32.0, 48.0),
+    );
+    animation = spriteSheet.createAnimation(row: 0, stepTime: 0.1);
+
+    position = gameRef.size / 2;
+    width = 50;
+    height = 62;
+    anchor = Anchor.center;
+
+    add(RectangleHitbox());
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    super.onCollision(intersectionPoints, other);
+    if (other is Enemy) {
+      gameRef.camera.shake(duration: .05, intensity: 10);
+      // onTouch.call();
+    }
+  }
+
+  void move(Vector2 delta) {
+    position.add(delta);
+  }
+}
+
+```
+
+### Classe Inimigo
+
+```
+class Enemy extends SpriteAnimationComponent
+    with HasGameRef<GameManager>, GestureHitboxes, CollisionCallbacks {
+  final double _speed = 250;
+
+  final Function(Vector2) onTouch;
+  var rectanglehitbox = RectangleHitbox();
+
+  Enemy(this.onTouch);
+
+  @override
+  Future<void> onLoad() async {
+    super.onLoad();
+    var spriteSheet = SpriteSheet(
+        image: await Images().load('enemy.png'), srcSize: Vector2(16.0, 16));
+    animation = spriteSheet.createAnimation(row: 0, stepTime: 0.2);
+    var size = 35.0;
+    position = Vector2(
+        Random()
+            .nextInt((gameRef.size.toRect().width - size).toInt())
+            .toDouble(),
+        size);
+    width = size;
+    height = size;
+    anchor = Anchor.center;
+
+    add(rectanglehitbox);
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    super.onCollision(intersectionPoints, other);
+    if (other is Bullet) {
+      removeFromParent();
+      remove(rectanglehitbox);
+      onTouch.call(other.position);
+    }
+  }
+
+  void move(Vector2 delta) {
+    position.add(delta);
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    position += Vector2(0, 1) * _speed * dt;
+    if (position.y > gameRef.size.y) {
+      removeFromParent();
+      remove(rectanglehitbox);
     }
   }
 }
 ```
 
-### Classe Inimigo Administrador
-
-![image](https://user-images.githubusercontent.com/61169043/202529646-dbe168f7-9362-4f5f-9b1e-37e8f63d613e.png)
-
-### Classe Inimigo
-
-![image](https://user-images.githubusercontent.com/61169043/202529851-a5be1ad0-4f89-4a10-81b3-b23d551944d5.png)
 
 ### Classe Jogo
 
-![image](https://user-images.githubusercontent.com/61169043/202530005-e29feb60-43f7-42a0-9d3e-5a1b72b01cac.png)
+```
+class Raptor extends Component with HasGameRef<GameManager> {
+  late Player _player;
+  late TextComponent _playerScore;
+  static const int playerLevelByScore = 20;
+  late Timer enemySpawner;
+  late Timer bulletSpawner;
+  int score = 0;
 
+  @override
+  Future<void> onLoad() async {
+    super.onLoad();
+    enemySpawner = Timer(.5, onTick: _spawnEnemy, repeat: true);
+    bulletSpawner = Timer(.3, onTick: _spawnBullet, repeat: true);
+    add(Background());
 
-### Classe Jogador
+    _playerScore = TextComponent(
+        text: "Score : 0",
+        position: Vector2(gameRef.size.toRect().width / 2, 10),
+        anchor: Anchor.topCenter,
+        textRenderer: TextPaint(
+          style: const TextStyle(
+            fontSize: 32.0,
+            color: Colors.white,
+          ),
+        ));
+    add(_playerScore);
 
-![image](https://user-images.githubusercontent.com/61169043/202530123-b3e996f8-059b-4a94-8b65-c51207872ef0.png)
+    _player = Player(_onPlayerTouch);
+    add(_player);
+  }
 
+  void _spawnBullet() {
+    var bullet = Bullet();
+    var bullet2 = Bullet();
+    bullet.position = _player.position.clone() + Vector2(15, -10);
+    bullet2.position = _player.position.clone() + Vector2(-15, -10);
+    add(bullet);
+    add(bullet2);
+  }
+
+  void _spawnEnemy() {
+    for (int i = 0; i <= min(score ~/ playerLevelByScore, 1); i++) {
+      add(Enemy(_onEnemyTouch));
+    }
+  }
+
+  void _onPlayerTouch() {
+    gameRef.endGame(score);
+  }
+
+  void _onEnemyTouch(Vector2 position) {
+    var explosion = Explosion();
+    explosion.position = position;
+    add(explosion);
+    score++;
+    _playerScore.text = "Score : $score";
+
+    // if (score % playerLevelByScore == 0) {
+    //   bulletSpawner.stop();
+    //   bulletSpawner = Timer(
+    //       min(1 / (score ~/ playerLevelByScore), 1).toDouble(),
+    //       onTick: _spawnBullet,
+    //       repeat: true);
+    // }
+  }
+
+  void onPanUpdate(DragUpdateInfo info) {
+    if (isMounted) {
+      _player.move(info.delta.game);
+    }
+  }
+
+  @override
+  void onMount() {
+    super.onMount();
+    enemySpawner.start();
+    bulletSpawner.start();
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+    enemySpawner.update(dt);
+    bulletSpawner.update(dt);
+  }
+
+  @override
+  void onRemove() {
+    super.onRemove();
+    enemySpawner.stop();
+    bulletSpawner.stop();
+  }
+}
+```
 
 ## Acesso e execução do código
 
