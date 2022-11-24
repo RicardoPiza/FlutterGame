@@ -7,6 +7,13 @@ O jogo não tem numero de vidas, caso a aeronave seja destruída você perde, o 
 
 O jogo é construído no flutter cada objeto da tela possui uma classe especifica, a imagem de fundo se move e o jogador tambem consegue mover a aeronave pela tela clicando em cima da nave e arrastando.
 
+## Autores
+
+- [Ricardo Piza](https://github.com/RicardoPiza)
+- [Rickson Figueira](https://github.com/sadrisco)
+- [Giovani Belgine](https://github.com/Gibelgini)
+- [Thiago Matos](https://github.com/t997)
+
 ## Arquitetura
 
 Desenvolvido é feito em flutter versão " ".
@@ -18,7 +25,6 @@ Bibliotecas do flame
 
 ## Recursos
 
-- Vida interativa
 - Fullscreen mode
 - Trilha sonora
 - Som de efeito
@@ -29,7 +35,52 @@ Para cada objeto é uma classe separada.
 
 ### Classe Bala
 
-![image](https://user-images.githubusercontent.com/61169043/202529161-ca9b5d35-29f8-4ffc-b5c5-0da5baa504a6.png)
+```
+class Bullet extends SpriteComponent with CollisionCallbacks {
+  final double _speed = 650;
+
+  Vector2 direction = Vector2(0, -1);
+
+  Bullet({
+    required Sprite? sprite,
+    required Vector2? position,
+    required Vector2? size,
+  }) : super(sprite: sprite, position: position, size: size);
+
+  @override
+  void onMount() {
+    super.onMount();
+
+    final shape = CircleHitbox.relative(
+      0.4,
+      parentSize: size,
+      position: size / 2,
+      anchor: Anchor.center,
+    );
+    add(shape);
+  }
+
+  @override
+  void onCollision(Set<Vector2> intersectionPoints, PositionComponent other) {
+    super.onCollision(intersectionPoints, other);
+
+    if (other is Enemy) {
+      removeFromParent();
+    }
+  }
+
+  @override
+  void update(double dt) {
+    super.update(dt);
+
+    position += direction * _speed * dt;
+
+    if (position.y < 0) {
+      removeFromParent();
+    }
+  }
+}
+```
 
 ### Classe Inimigo Administrador
 
