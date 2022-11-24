@@ -16,6 +16,13 @@ Utilizado flame audio.
 As imagens foram trabalhadas no Figma.
 Bibliotecas do flame
 
+## Recursos
+
+- Vida interativa
+- Fullscreen mode
+- Trilha sonora
+- Som de efeito
+
 
 ## Classes
 Para cada objeto é uma classe separada.
@@ -24,7 +31,7 @@ Para cada objeto é uma classe separada.
 
 ![image](https://user-images.githubusercontent.com/61169043/202529161-ca9b5d35-29f8-4ffc-b5c5-0da5baa504a6.png)
 
-###Classe Inimigo Administrador
+### Classe Inimigo Administrador
 
 ![image](https://user-images.githubusercontent.com/61169043/202529646-dbe168f7-9362-4f5f-9b1e-37e8f63d613e.png)
 
@@ -53,5 +60,11 @@ O código do projeto encontra-se no github.
 Publico Alvo
 
 O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
+
+## Demo
+
+Inserir Gif ou imagem do jogo para demonstração
+
+
 
 
