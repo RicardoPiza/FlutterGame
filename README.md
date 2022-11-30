@@ -280,13 +280,6 @@ class Raptor extends Component with HasGameRef<GameManager> {
   }
 }
 ```
-##  🎨 Layout
-
-O layout da aplicação está disponível no Notion:
-
-<a href="[https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta?node-id=136%3A546](https://www.notion.so/Visual-design-Raptor-Call-of-the-USF-25257a157cc444bfb90027c96e0bd27c)">
-  <img src="https://img.shields.io/badge/Acessar%20Layout%20-Notion-%2304D361">
-</a>
 
 ## 🚀 Acesso e execução do código
 
@@ -300,7 +293,7 @@ Publico Alvo
 
 O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
 
-## Demo
+## 🎨 Demo
 
 Inserir Gif ou imagem do jogo para demonstração
 
