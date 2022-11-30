@@ -23,14 +23,21 @@ Utilizado flame audio.
 As imagens foram trabalhadas no Figma.
 Bibliotecas do flame
 
-## Recursos
+## ⚙️ Recursos
 
 - Fullscreen mode
 - Trilha sonora
 - Som de efeito
 
+## 🛠 Tecnologias
 
-## Classes
+  [![My Skills](https://skills.thijs.gg/icons?i=dart)](https://skills.thijs.gg)
+- [Flutter](https://flutter.dev/?gclid=Cj0KCQiAm5ycBhCXARIsAPldzoXhfw4qjHBQMD9DBtdRUYAh8qIX3F8dIQ7Z0z7Jee8iTdiKkAMnAksaAi_cEALw_wcB&gclsrc=aw.ds)
+    - [Dart](https://dart.dev/)
+- [Framework - Flame Engine](https://flame-engine.org/)  
+
+
+## 💻 Classes
 Para cada objeto é uma classe separada.
 
 ### Classe Bala
