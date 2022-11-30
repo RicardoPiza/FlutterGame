@@ -280,14 +280,21 @@ class Raptor extends Component with HasGameRef<GameManager> {
   }
 }
 ```
+##  🎨 Layout
 
-## Acesso e execução do código
+O layout da aplicação está disponível no Notion:
+
+<a href="[https://www.figma.com/file/1SxgOMojOB2zYT0Mdk28lB/Ecoleta?node-id=136%3A546](https://www.notion.so/Visual-design-Raptor-Call-of-the-USF-25257a157cc444bfb90027c96e0bd27c)">
+  <img src="https://img.shields.io/badge/Acessar%20Layout%20-Notion-%2304D361">
+</a>
+
+## 🚀 Acesso e execução do código
 
 O código do projeto encontra-se no github.
 
 - [Código do Jogo](https://github.com/RicardoPiza/FlutterGame)
 
-## Objetivo do Projeto
+## 💡 Objetivo do Projeto
 
 Publico Alvo
 
