@@ -3,28 +3,32 @@
 <img src="https://drive.google.com/uc?export=view&id=1QgJmD2O3J3OLhXgRkMqIvkjzDKJYcmfs" width="400">
 </p>
 </br></br></br></br>
-<h2>Sobre o Raptor:</h2>
-Raptor Call of the USF é um jogo spaceshooter que tem como objetivo atingir o inimigo que irá surgir na tela. As balas saem da nave continuamente o jogador apenas move a nave e desvia do inimigo se o inimigo encostar no avião, você perde e a aeronave explode se o tiro acertar o inimigo ele explode e você acumula pontos.
+<h2>🕹 Sobre o Raptor:</h2>
+Raptor Call of the USF é um jogo spaceshooter que tem como objetivo atingir o inimigo que irá surgir na tela.<br>
 
-O jogo não tem numero de vidas, caso a aeronave seja destruída você perde, o objetivo é ir destruindo os inimigos até que algum encoste na aeronave e a destrua.
+As balas saem da nave continuamente o jogador apenas move a nave e desvia do inimigo se o inimigo encostar no avião, você perde e a aeronave explode se o tiro acertar o inimigo ele explode e você acumula pontos.
 
-O jogo é construído no flutter cada objeto da tela possui uma classe especifica, a imagem de fundo se move e o jogador tambem consegue mover a aeronave pela tela clicando em cima da nave e arrastando.
+A quantidade de vidas do jogador é inexistente, caso a aeronave seja destruída você perde. O objetivo é destruir os inimigos até que algum encoste na aeronave e a destrua.<br>
 
-## Autores
+Construído em flutter, cada objeto da tela possui uma classe especifica.<br>
+
+A imagem de fundo se move usando o efeito Parallax que é um recurso nativo da biblioteca Flame e o jogador tambem consegue mover a aeronave pela tela clicando em cima da nave e arrastando.
+
+## ✒ Autores
 
 - [Ricardo Piza](https://github.com/RicardoPiza)
 - [Rickson Figueira](https://github.com/sadrisco)
 - [Giovani Belgine](https://github.com/Gibelgini)
 - [Thiago Matos](https://github.com/t997)
 
-## Arquitetura
+## 📐 Arquitetura
 
-Desenvolvido é feito em flutter versão " ".
-A linguagem de programação DART.
-Utilizado flame framework do flutter.
-Utilizado flame audio.
-As imagens foram trabalhadas no Figma.
-Bibliotecas do flame
+Desenvolvido em flutter na versão 3.3.9.<br>
+
+- A linguagem de programação DART.<br>
+- Utilizado [flame engine framework](https://docs.flame-engine.org/1.5.0/) do flutter.<br>
+- Utilizado [flame audio](https://docs.flame-engine.org/1.5.0/bridge_packages/flame_audio/audio.html?highlight=audio).<br>
+- As imagens foram trabalhadas no Figma.
 
 ## ⚙️ Recursos
 
@@ -110,6 +114,8 @@ flutter run lib/main.dart
 Desenvolvido para um projeto acadêmico, a ideia era exercitar a linguagem dart com o framework flutter.
 
 O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
+
+
 
 ## 🎨 Demo
 
