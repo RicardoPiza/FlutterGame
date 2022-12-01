@@ -3,7 +3,7 @@
 <img src="https://drive.google.com/uc?export=view&id=1QgJmD2O3J3OLhXgRkMqIvkjzDKJYcmfs" width="400">
 </p>
 
-##🕹 Sobre o projeto
+<h2>🕹 Sobre o projeto</h2>
 Raptor: Call of the USF é um jogo no estilo space shooter que tem como objetivo atingir naves inimigas que surgem de forma aleatória na tela.<br>
 
 As balas saem da nave continuamente. O jogador controla a nave e desvia do inimigo utilizando a tela Touch Screen. Caso o inimigo encoste no avião, o jogador perde e a aeronave explode. Se o tiro acertar o inimigo, ele explode e você acumula pontos.
@@ -16,8 +16,9 @@ A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da 
 
 ## 🎨 Demo
 <p align="center">
-![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
+<img src="https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif">
 </p>
+
 ## ✒ Autores
 
 - [Ricardo Piza](https://github.com/RicardoPiza)
