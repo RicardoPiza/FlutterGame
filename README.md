@@ -2,8 +2,8 @@
 </br></br><p align = "center">
 <img src="https://drive.google.com/uc?export=view&id=1QgJmD2O3J3OLhXgRkMqIvkjzDKJYcmfs" width="400">
 </p>
-</br></br></br></br>
-<h2>🕹 Sobre o Raptor - Call of the USF:</h2>
+
+##🕹 Sobre o projeto
 Raptor: Call of the USF é um jogo no estilo space shooter que tem como objetivo atingir naves inimigas que surgem de forma aleatória na tela.<br>
 
 As balas saem da nave continuamente. O jogador controla a nave e desvia do inimigo utilizando a tela Touch Screen. Caso o inimigo encoste no avião, o jogador perde e a aeronave explode. Se o tiro acertar o inimigo, ele explode e você acumula pontos.
@@ -14,8 +14,10 @@ Construído em Flutter e Flame, cada objeto da tela possui uma classe especifica
 
 A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da biblioteca Flame.
 
-<br>
-
+## 🎨 Demo
+<p align="center">
+![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
+</p>
 ## ✒ Autores
 
 - [Ricardo Piza](https://github.com/RicardoPiza)
@@ -27,10 +29,10 @@ A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da 
 
 Desenvolvido em flutter na versão 3.3.9.<br>
 
-- A linguagem de programação DART.<br>
+- A linguagem de programação Dart.<br>
 - Utilizado [flame engine framework](https://docs.flame-engine.org/1.5.0/) do flutter.<br>
 - Utilizado [flame audio](https://docs.flame-engine.org/1.5.0/bridge_packages/flame_audio/audio.html?highlight=audio).<br>
-- As imagens foram trabalhadas no Figma.
+- O protótipo de UI foi desenvolvido no Figma.
 
 ## ⚙️ Recursos
 
@@ -111,11 +113,6 @@ flutter run lib/main.dart
 
 ## 💡 Objetivo do Projeto
 
-Desenvolvido para um projeto acadêmico, a ideia era exercitar a linguagem dart com o framework flutter.
+Desenvolvido para um projeto acadêmico, a ideia era exercitar o desenvolvimento de software mobile utilizando o framework multiplataformas Flutter, junto da linguagem Dart.
 
 O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
-
-
-
-## 🎨 Demo
-![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
