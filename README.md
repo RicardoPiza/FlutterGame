@@ -15,7 +15,6 @@ Construído em Flutter e Flame, cada objeto da tela possui uma classe especifica
 A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da biblioteca Flame.
 
 <br>
-  ![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
 
 ## ✒ Autores
 
