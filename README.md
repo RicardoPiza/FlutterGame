@@ -16,7 +16,7 @@ A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da 
 
 <br>
 <p align = "center">
-  ![animation of the game](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
+  ![](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
 </p>
 
 ## ✒ Autores
