@@ -1,7 +1,10 @@
 
-# Raptor: Call of the USF
-
-O Raptor Call of the USF é um jogo spaceshooter que tem como objetivo atingir o inimigo que irá surgir na tela, as balas saem da nave continuamente o jogador apenas move a nave e desvia do inimigo se o inimigo encostar no avião, você perde e a aeronave explode se o tiro acertar o inimigo ele explode e você acumula pontos.
+</br></br><p align = "center">
+<img src="https://drive.google.com/uc?export=view&id=1QgJmD2O3J3OLhXgRkMqIvkjzDKJYcmfs" width="400">
+</p>
+</br></br></br></br>
+<h2>Sobre o Raptor:</h2>
+Raptor Call of the USF é um jogo spaceshooter que tem como objetivo atingir o inimigo que irá surgir na tela. As balas saem da nave continuamente o jogador apenas move a nave e desvia do inimigo se o inimigo encostar no avião, você perde e a aeronave explode se o tiro acertar o inimigo ele explode e você acumula pontos.
 
 O jogo não tem numero de vidas, caso a aeronave seja destruída você perde, o objetivo é ir destruindo os inimigos até que algum encoste na aeronave e a destrua.
 
