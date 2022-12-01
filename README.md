@@ -15,9 +15,7 @@ Construído em Flutter e Flame, cada objeto da tela possui uma classe especifica
 A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da biblioteca Flame.
 
 <br>
-<p align = "center">
-  ![](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
-</p>
+  ![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
 
 ## ✒ Autores
 
@@ -121,9 +119,4 @@ O Jogo é destinado a todas as idades, não possui classificação por idade ou 
 
 
 ## 🎨 Demo
-<p align = "center">
-![animation of the game](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
-</p>
-
-
-
+![game animation](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
