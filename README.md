@@ -3,16 +3,21 @@
 <img src="https://drive.google.com/uc?export=view&id=1QgJmD2O3J3OLhXgRkMqIvkjzDKJYcmfs" width="400">
 </p>
 </br></br></br></br>
-<h2>🕹 Sobre o Raptor:</h2>
-Raptor Call of the USF é um jogo spaceshooter que tem como objetivo atingir o inimigo que irá surgir na tela.<br>
+<h2>🕹 Sobre o Raptor - Call of the USF:</h2>
+Raptor: Call of the USF é um jogo no estilo space shooter que tem como objetivo atingir naves inimigas que surgem de forma aleatória na tela.<br>
 
-As balas saem da nave continuamente o jogador apenas move a nave e desvia do inimigo se o inimigo encostar no avião, você perde e a aeronave explode se o tiro acertar o inimigo ele explode e você acumula pontos.
+As balas saem da nave continuamente. O jogador controla a nave e desvia do inimigo utilizando a tela Touch Screen. Caso o inimigo encoste no avião, o jogador perde e a aeronave explode. Se o tiro acertar o inimigo, ele explode e você acumula pontos.
 
 A quantidade de vidas do jogador é inexistente, caso a aeronave seja destruída você perde. O objetivo é destruir os inimigos até que algum encoste na aeronave e a destrua.<br>
 
-Construído em flutter, cada objeto da tela possui uma classe especifica.<br>
+Construído em Flutter e Flame, cada objeto da tela possui uma classe especifica.<br>
 
-A imagem de fundo se move usando o efeito Parallax que é um recurso nativo da biblioteca Flame e o jogador tambem consegue mover a aeronave pela tela clicando em cima da nave e arrastando.
+A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da biblioteca Flame.
+
+<br>
+<p align = "center">
+  ![animation of the game](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
+</p>
 
 ## ✒ Autores
 
@@ -35,17 +40,18 @@ Desenvolvido em flutter na versão 3.3.9.<br>
 - Fullscreen mode
 - Trilha sonora
 - Som de efeito
+- Background infinito
 
 ## 🛠 Tecnologias
 
   [![My Skills](https://skills.thijs.gg/icons?i=dart)](https://skills.thijs.gg)
-- [Flutter](https://flutter.dev/?gclid=Cj0KCQiAm5ycBhCXARIsAPldzoXhfw4qjHBQMD9DBtdRUYAh8qIX3F8dIQ7Z0z7Jee8iTdiKkAMnAksaAi_cEALw_wcB&gclsrc=aw.ds)
-    - [Dart](https://dart.dev/)
-- [Framework - Flame Engine](https://flame-engine.org/)  
+- [Dart](https://dart.dev/)
+    - [Flutter](https://flutter.dev/?gclid=Cj0KCQiAm5ycBhCXARIsAPldzoXhfw4qjHBQMD9DBtdRUYAh8qIX3F8dIQ7Z0z7Jee8iTdiKkAMnAksaAi_cEALw_wcB&gclsrc=aw.ds) 
+    - [Framework - Flame Engine](https://flame-engine.org/)  
 
 
 ## 💻 Classes
-Para cada objeto é uma classe separada.
+Para cada objeto temos uma classe separada.
 
 ### Classe Bala
 
@@ -89,24 +95,21 @@ Etapas para a execução em ambiente local:
 git clone https://github.com/RicardoPiza/FlutterGame/
 
 ```
-2. Acessar a pasta
+2. Acessar a pasta do repositório recém clonado
 
 ```
 cd FlutterGame
-
 ```
 
-3. Instalar as dependências do projeto. Pode ser feito através do arquivo pubspec.yaml dentro do projeto ou através do comando:
+3. Instalar as dependências do projeto. Pode ser feito dentro do projeto através do arquivo pubspec.yaml ou através do comando:
 
 ```
 flutter pub get
-
 ```
 
 4. Inicie o projeto
 ```
 flutter run lib/main.dart
-
 ```
 
 ## 💡 Objetivo do Projeto
@@ -118,9 +121,9 @@ O Jogo é destinado a todas as idades, não possui classificação por idade ou 
 
 
 ## 🎨 Demo
-
-Inserir Gif ou imagem do jogo para demonstração
-
+<p align = "center">
+![animation of the game](https://sadris.co/wp-content/uploads/2022/12/raptor-call.gif)
+</p>
 
 
 
