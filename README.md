@@ -26,6 +26,9 @@ A imagem de fundo se move usando o efeito Parallax, que é um recurso nativo da 
 - [Giovani Belgine](https://github.com/Gibelgini)
 - [Thiago Matos](https://github.com/t997)
 
+### Professor Docente
+- Jose Matias Lemes Filho
+
 ## 📐 Arquitetura
 
 Desenvolvido em flutter na versão 3.3.9.<br>
