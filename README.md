@@ -117,3 +117,11 @@ flutter run lib/main.dart
 Desenvolvido para um projeto acadêmico, a ideia era exercitar o desenvolvimento de software mobile utilizando o framework multiplataformas Flutter, junto da linguagem Dart.
 
 O Jogo é destinado a todas as idades, não possui classificação por idade ou gênero.
+
+## 🔮 Trabalhos Futuros
+
+- Corrigir o bug de limitação da tela de usuário
+- Corrigir a implementação do recurso de vida do jogador
+- Desenvolver um mecanismo de power-ups para o jogador
+- Implementar um número maior de inimigos
+- Implementar um Boss final
